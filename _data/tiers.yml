@@ -264,54 +264,42 @@
       price: "$4,000"
       notes: "Open-source 4-DOF actuator system. Community firmware. Surge, sway, heave, and traction loss."
 
-- name: "Tier 7"
+- name: "TWR Retail Pod v1"
   level: 7
-  price_range: "$30,000 – $100,000+"
-  use_cases: ["immersion", "endurance"]
+  price_range: "20,000"
+  use_cases: ["immersion", "commercial"]
   color: "#d03a5c"
-  description: "Absurd motion options"
+  description: "Becasue we could"
   components:
     wheelbase:
-      name: "Simucube 2 Ultimate"
-      price: "$3,100"
-      notes: "32 Nm. The final word in consumer direct drive."
+      name: "Simucube 2 Pro"
+      price: "$1,500"
+      notes: "25 Nm. Built like tank."
     wheel_rim:
-      name: "Precision Sim Engineering LM-X"
-      price: "$1,200"
-      notes: "Full carbon, integrated display, wireless with Simucube."
+      name: "Simucube Valo GT-23 Leather"
+      price: "$1,000"
+      notes: "Round, well-equipped, easy to clean. Wireless with Simucube."
     pedals:
-      name: "Simtag Hydraulic Pedals"
-      price: "$2,500"
-      notes: "True hydraulic brake and throttle. Real car pedal feel."
+      name: "Heusinkveld Ultimate 3-pedal"
+      price: "$1,200"
+      notes: "Adjustable, indestructable."
     shifter:
-      name: "Aiologs Sim Racing Shifter"
-      price: "$350"
-      notes: "Same unit — it's already best-in-class."
+      name: "BDH H1SQ"
+      price: "$1,200"
+      notes: "4kg of aluminum and steel."
     cockpit:
-      name: "SimLab P1-X (motion-ready)"
-      price: "$900"
-      notes: "P1-X with motion platform mounting hardware."
+      name: "NLR F-GT Elite 160"
+      price: "$1,200"
+      notes: "Front plate edition for Simucube. Motion ready."
     seat:
-      name: "Racetech RT4129HRW"
-      price: "$1,400"
-      notes: "FIA WEC-spec racing seat. Head restraint compatible."
-    monitor:
-      name: "Pimax Crystal Super VR"
-      price: "$2,000"
-      notes: "Highest clarity VR available. Pairs perfectly with motion."
+      name: "Sparco GT"
+      price: "$500"
+      notes: "Authentic 80s supercar feel, durable recline."
     handbrake:
       name: "Heusinkveld Sim Handbrake"
       price: "$250"
       notes: "Still the benchmark."
-    button_box:
-      name: "Simcore MiniMax"
-      price: "$400"
-      notes: "Compact aluminum box with backlit buttons, rotaries, and flag LEDs."
-    wind_sim:
-      name: "SRS WindSim Pro"
-      price: "$800"
-      notes: "Speed-reactive fans. Wind intensity tracks car speed."
     motion:
-      name: "SFX-100 4-Actuator Kit"
-      price: "$4,000"
-      notes: "Open-source 4-DOF actuator system. Community firmware. Surge, sway, heave, and traction loss."
+      name: "D-BOX 4250i 1.5""
+      price: "$8,000"
+      notes: "3DOF, indestructable, spec'd for commerical use."
