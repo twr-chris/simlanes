@@ -266,7 +266,7 @@
 
 - name: "TWR Retail Pod v1"
   level: 7
-  price_range: "20,000"
+  price_range: "$20,000"
   use_cases: ["immersion", "commercial"]
   color: "#d03a5c"
   description: "Becasue we could"
@@ -291,6 +291,7 @@
       name: "NLR F-GT Elite 160"
       price: "$1,200"
       notes: "Front plate edition for Simucube. Motion ready."
+      bundles: ["mount"]
     seat:
       name: "Sparco GT"
       price: "$500"
