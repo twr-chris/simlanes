@@ -30,5 +30,6 @@ module.exports = function (eleventyConfig) {
     templateFormats: ["md", "html", "njk"],
     markdownTemplateEngine: "njk",
     htmlTemplateEngine: "njk",
+    pathPrefix: process.env.PAGES_PATH_PREFIX || "/",
   };
 };

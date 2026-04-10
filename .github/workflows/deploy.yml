@@ -25,7 +25,7 @@ jobs:
           cache: npm
 
       - run: npm ci
-      - run: npm run build
+      - run: PAGES_PATH_PREFIX=/simlanes/ npm run build
 
       - uses: actions/upload-pages-artifact@v4
         with:

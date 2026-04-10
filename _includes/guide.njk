@@ -5,14 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{{ title }} — Simlanes</title>
   <meta name="description" content="{{ description or title }}">
-  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | url }}">
 </head>
 <body>
   {% include "header.njk" %}
   <main>
     <article class="guide">
       <nav class="guide-back">
-        <a href="/">&larr; Back to rig table</a>
+        <a href="{{ '/' | url }}">&larr; Back to rig table</a>
       </nav>
       <header class="guide-header">
         <h1 class="guide-title">{{ title }}</h1>
