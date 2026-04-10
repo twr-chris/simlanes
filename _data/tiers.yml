@@ -1,0 +1,317 @@
+- name: "Tier 1"
+  level: 1
+  price_range: "$200 – $400"
+  use_cases: ["beginner", "casual"]
+  color: "#4a8c5c"
+  description: "A desk-mount kit to find out if sim racing is for you"
+  components:
+    wheelbase:
+      name: "Logitech G29 / G920"
+      price: "$230"
+      notes: "Gear-driven FFB. Comes bundled with rim, pedals, and desk clamp."
+      bundles: ["wheel_rim", "pedals", "mount"]
+
+- name: "Tier 2"
+  level: 2
+  price_range: "$600 – $900"
+  use_cases: ["casual", "competitive"]
+  color: "#3d8b8b"
+  description: "Better FFB and flexible shifters"
+  flavors:
+    - name: "Thrustmaster"
+      components:
+        wheelbase:
+          name: "Thrustmaster T300 RS GT"
+          price: "$400"
+          notes: "Belt-driven FFB. Big step up in fidelity from gear-driven. Includes detachable 28 cm rim."
+          bundles: ["wheel_rim", "pedals"]
+        cockpit:
+          name: "Next Level Racing Wheel Stand 2.0"
+          price: "$279"
+          notes: "Foldable stand. Much stiffer than a desk clamp, stores away when not in use."
+          bundles: ["mount"]
+        shifter:
+          name: "Thrustmaster TH8A"
+          price: "$199"
+          notes: "H-pattern and sequential modes. Solid metal construction."
+          optional: true
+    - name: "Moza"
+      components:
+        wheelbase:
+          name: "Moza R5 Bundle"
+          price: "$400"
+          notes: "Belt-driven FFB. Big step up in fidelity from gear-driven. Includes detachable 28 cm rim."
+          bundles: ["wheel_rim", "pedals"]
+        cockpit:
+          name: "Next Level Racing Wheel Stand 2.0"
+          price: "$279"
+          notes: "Foldable stand. Much stiffer than a desk clamp, stores away when not in use."
+          bundles: ["mount"]
+        shifter:
+          name: "SHH Shifter HUBB"
+          price: "$150"
+          notes: "H-pattern and sequential modes. Solid metal construction."
+          optional: true
+
+- name: "Tier 3"
+  level: 3
+  price_range: "$1,500 – $2,500"
+  use_cases: ["competitive", "endurance"]
+  color: "#3b6fa0"
+  description: "A dedicated cockpit with direct-drive force feedback"
+  flavors:
+    - name: "Moza Ecosystem"
+      components:
+        wheelbase:
+          name: "Moza R5"
+          price: "$300"
+          notes: "Entry direct-drive. 5.5 Nm — less torque than flagships but vastly smoother than belt/gear."
+        wheel_rim:
+          name: "Moza ES Wheel"
+          price: "$130"
+          notes: "Round 27 cm rim. Good all-rounder for GT and formula."
+        pedals:
+          name: "Moza CRP"
+          price: "$200"
+          notes: "Load-cell pedals with adjustable brake stiffness. 200 kg max force."
+        shifter:
+          name: "Moza HGP"
+          price: "$130"
+          notes: "H-pattern with short throw. Magnetic gear engagement."
+        cockpit:
+          name: "Next Level Racing GT Track"
+          price: "$500"
+          notes: "Full aluminum cockpit. Adjustable pedal plate angle, seat slider."
+          bundles: ["mount"]
+        seat:
+          name: "Next Level Racing ES1 Seat"
+          price: "$300"
+          notes: "Faux leather bucket seat with side bolsters. Mounts directly to GT Track."
+        monitor:
+          name: "Samsung Odyssey G5 34\" ultrawide"
+          price: "$350"
+          notes: "1440p ultrawide fills peripheral vision. Better immersion than triple 24s at this price."
+    - name: "Fanatec Ecosystem"
+      components:
+        wheelbase:
+          name: "Fanatec CSL DD (8 Nm)"
+          price: "$350"
+          notes: "Direct drive with Fanatec's huge rim ecosystem. 8 Nm with boost kit."
+        wheel_rim:
+          name: "Fanatec CSL Elite Steering Wheel"
+          price: "$200"
+          notes: "Multi-purpose rim with metal paddle shifters and funky switch."
+        pedals:
+          name: "Fanatec CSL Pedals LC"
+          price: "$200"
+          notes: "Load-cell brake. Solid entry into Fanatec's pedal range."
+        shifter:
+          name: "Fanatec ClubSport Shifter SQ V1.5"
+          price: "$260"
+          notes: "H-pattern and sequential. Connects through wheelbase — one less USB cable."
+        cockpit:
+          name: "GT Omega PRIME"
+          price: "$450"
+          notes: "Profile aluminum cockpit. Good value for a rigid frame."
+          bundles: ["mount"]
+        seat:
+          name: "GT Omega RS9 Seat"
+          price: "$250"
+          notes: "Fabric bucket seat. Breathable for long sessions."
+        monitor:
+          name: "Samsung Odyssey G5 34\" ultrawide"
+          price: "$350"
+          notes: "1440p ultrawide fills peripheral vision. Better immersion than triple 24s at this price."
+
+- name: "Tier 4"
+  level: 4
+  price_range: "$3,000 – $5,000"
+  use_cases: ["competitive", "endurance", "rally"]
+  color: "#5b4fa0"
+  description: "High-end direct drive, triples or VR, and rally gear"
+  components:
+    wheelbase:
+      name: "Simagic Alpha Mini"
+      price: "$500"
+      notes: "10 Nm direct drive. Excellent detail and responsiveness."
+    wheel_rim:
+      name: "Simagic GTC"
+      price: "$280"
+      notes: "GT-style with button cluster, dual clutch paddles, and 7-way funky switch."
+    pedals:
+      name: "Heusinkveld Sprint"
+      price: "$600"
+      notes: "High-end load cell. 65 kg max brake force with adjustable elastomers."
+    shifter:
+      name: "Heusinkveld Sim Shifter Sequential"
+      price: "$300"
+      notes: "Industrial feel. Adjustable detent force."
+    cockpit:
+      name: "SimLab GT1 Evo"
+      price: "$500"
+      notes: "8020 aluminum extrusion. Practically infinite adjustability."
+    seat:
+      name: "Sparco Grid Q"
+      price: "$350"
+      notes: "FIA-rated fiberglass racing seat. The real thing."
+    monitor:
+      name: "Triple 27\" 1440p 165Hz"
+      price: "$800"
+      notes: "Three matched panels on a triple stand. ~180 degree FOV."
+    handbrake:
+      name: "Heusinkveld Sim Handbrake"
+      price: "$250"
+      notes: "Hydraulic feel with adjustable travel. Essential for rally and drift."
+
+- name: "Tier 5"
+  level: 5
+  price_range: "$6,000 – $10,000"
+  use_cases: ["competitive", "endurance", "immersion"]
+  color: "#7b3fa0"
+  description: "Flagship direct drive with tactile feedback and a button box"
+  components:
+    wheelbase:
+      name: "Simucube 2 Sport"
+      price: "$1,300"
+      notes: "17 Nm torque. True Direct Drive flagship feel. Wireless wheel connectivity."
+    wheel_rim:
+      name: "Ascher Racing B24L-SC"
+      price: "$600"
+      notes: "CNC aluminum, carbon fiber grips, full button plate with rotary encoders."
+    pedals:
+      name: "Heusinkveld Ultimate+"
+      price: "$1,100"
+      notes: "Top-tier load cell. 100+ kg brake force. Active pedal firmware support."
+      replaces: ["pedal_haptics"]
+    shifter:
+      name: "Aiologs Sim Racing Shifter"
+      price: "$350"
+      notes: "CNC machined. H-pattern with hall sensors. Adjustable gate and throw."
+    cockpit:
+      name: "SimLab P1-X"
+      price: "$700"
+      notes: "Overbuilt 8020 chassis. Handles any torque wheelbase with zero flex."
+    seat:
+      name: "Sparco EVO QRT"
+      price: "$600"
+      notes: "Full carbon shell. Lightweight and rigid."
+    monitor:
+      name: "Samsung Odyssey Neo G9 57\""
+      price: "$1,500"
+      notes: "Mini LED 8K super-ultrawide. Or: Pimax Crystal VR ($1,600) for full immersion."
+    handbrake:
+      name: "Heusinkveld Sim Handbrake"
+      price: "$250"
+      notes: "Same as Pro-Am tier — it's already top-notch."
+    button_box:
+      name: "DSD Button Box Pro"
+      price: "$300"
+      notes: "12+ buttons, rotary encoders, toggle switches. Manage TC, ABS, pit menus."
+    wind_sim:
+      name: "SimXperience SimVibe + 4x ButtKicker Gamer 2"
+      price: "$500"
+      notes: "Bass shaker setup mounted to rig. Feel curbs, engine RPM, and impacts."
+
+- name: "Tier 6"
+  level: 6
+  price_range: "$15,000 – $30,000"
+  use_cases: ["immersion", "endurance"]
+  color: "#a03a5c"
+  description: "Motion platform, premium everything — as close to a real car as it gets"
+  components:
+    wheelbase:
+      name: "Simucube 2 Ultimate"
+      price: "$3,100"
+      notes: "32 Nm. The final word in consumer direct drive."
+    wheel_rim:
+      name: "Precision Sim Engineering LM-X"
+      price: "$1,200"
+      notes: "Full carbon, integrated display, wireless with Simucube."
+    pedals:
+      name: "Simtag Hydraulic Pedals"
+      price: "$2,500"
+      notes: "True hydraulic brake and throttle. Real car pedal feel."
+    shifter:
+      name: "Aiologs Sim Racing Shifter"
+      price: "$350"
+      notes: "Same unit — it's already best-in-class."
+    cockpit:
+      name: "SimLab P1-X (motion-ready)"
+      price: "$900"
+      notes: "P1-X with motion platform mounting hardware."
+    seat:
+      name: "Racetech RT4129HRW"
+      price: "$1,400"
+      notes: "FIA WEC-spec racing seat. Head restraint compatible."
+    monitor:
+      name: "Pimax Crystal Super VR"
+      price: "$2,000"
+      notes: "Highest clarity VR available. Pairs perfectly with motion."
+    handbrake:
+      name: "Heusinkveld Sim Handbrake"
+      price: "$250"
+      notes: "Still the benchmark."
+    button_box:
+      name: "Simcore MiniMax"
+      price: "$400"
+      notes: "Compact aluminum box with backlit buttons, rotaries, and flag LEDs."
+    wind_sim:
+      name: "SRS WindSim Pro"
+      price: "$800"
+      notes: "Speed-reactive fans. Wind intensity tracks car speed."
+    motion:
+      name: "SFX-100 4-Actuator Kit"
+      price: "$4,000"
+      notes: "Open-source 4-DOF actuator system. Community firmware. Surge, sway, heave, and traction loss."
+
+- name: "Tier 7"
+  level: 7
+  price_range: "$30,000 – $100,000+"
+  use_cases: ["immersion", "endurance"]
+  color: "#d03a5c"
+  description: "Absurd motion options"
+  components:
+    wheelbase:
+      name: "Simucube 2 Ultimate"
+      price: "$3,100"
+      notes: "32 Nm. The final word in consumer direct drive."
+    wheel_rim:
+      name: "Precision Sim Engineering LM-X"
+      price: "$1,200"
+      notes: "Full carbon, integrated display, wireless with Simucube."
+    pedals:
+      name: "Simtag Hydraulic Pedals"
+      price: "$2,500"
+      notes: "True hydraulic brake and throttle. Real car pedal feel."
+    shifter:
+      name: "Aiologs Sim Racing Shifter"
+      price: "$350"
+      notes: "Same unit — it's already best-in-class."
+    cockpit:
+      name: "SimLab P1-X (motion-ready)"
+      price: "$900"
+      notes: "P1-X with motion platform mounting hardware."
+    seat:
+      name: "Racetech RT4129HRW"
+      price: "$1,400"
+      notes: "FIA WEC-spec racing seat. Head restraint compatible."
+    monitor:
+      name: "Pimax Crystal Super VR"
+      price: "$2,000"
+      notes: "Highest clarity VR available. Pairs perfectly with motion."
+    handbrake:
+      name: "Heusinkveld Sim Handbrake"
+      price: "$250"
+      notes: "Still the benchmark."
+    button_box:
+      name: "Simcore MiniMax"
+      price: "$400"
+      notes: "Compact aluminum box with backlit buttons, rotaries, and flag LEDs."
+    wind_sim:
+      name: "SRS WindSim Pro"
+      price: "$800"
+      notes: "Speed-reactive fans. Wind intensity tracks car speed."
+    motion:
+      name: "SFX-100 4-Actuator Kit"
+      price: "$4,000"
+      notes: "Open-source 4-DOF actuator system. Community firmware. Surge, sway, heave, and traction loss."

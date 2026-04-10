@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ title }} — Simlanes</title>
+  <meta name="description" content="{{ description or title }}">
+  <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+  {% include "header.njk" %}
+  <main>
+    <article class="guide">
+      <nav class="guide-back">
+        <a href="/">&larr; Back to rig table</a>
+      </nav>
+      <header class="guide-header">
+        <h1 class="guide-title">{{ title }}</h1>
+        {% if description %}
+        <p class="guide-description">{{ description }}</p>
+        {% endif %}
+        {% if tags %}
+        <div class="guide-tags">
+          {% for tag in tags %}
+          <span class="guide-tag">{{ tag }}</span>
+          {% endfor %}
+        </div>
+        {% endif %}
+        {% if page.date %}
+        <time class="guide-date" datetime="{{ page.date | dateFormat('iso') }}">Updated {{ page.date | dateFormat }}</time>
+        {% endif %}
+      </header>
+      <div class="guide-body">
+        {{ content | safe }}
+      </div>
+      {% if related_categories %}
+      <footer class="guide-related">
+        <h3>Related components</h3>
+        <div class="guide-related-links">
+          {% for catId in related_categories %}
+            {% for cat in categories %}
+              {% if cat.id == catId %}
+              <a href="/#{{ cat.id }}" class="guide-related-link">{{ cat.label }}</a>
+              {% endif %}
+            {% endfor %}
+          {% endfor %}
+        </div>
+      </footer>
+      {% endif %}
+    </article>
+  </main>
+  <footer>
+    <p>
+      <a href="https://github.com/twr-chris/simlanes">Contribute on GitHub</a>
+      &middot; Data-driven &mdash; submit a PR to improve recommendations
+    </p>
+  </footer>
+</body>
+</html>

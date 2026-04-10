@@ -1,0 +1,148 @@
+{# Macro: render a single component cell given a components map and a category #}
+{% macro componentCell(components, cat, tierColor) %}
+  {# Check if another component replaces or bundles this category #}
+  {% set replacedBy = null %}
+  {% set bundledWith = null %}
+  {% for catKey, catComp in components %}
+    {% if catComp.replaces %}
+      {% for r in catComp.replaces %}
+        {% if r == cat.id %}
+          {% set replacedBy = catComp %}
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+    {% if catComp.bundles %}
+      {% for b in catComp.bundles %}
+        {% if b == cat.id %}
+          {% set bundledWith = catComp %}
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+  {% endfor %}
+
+  {% set comp = components[cat.id] %}
+  {% if replacedBy %}
+    <div class="component replaced">
+      <span class="comp-replaced-label">Replaced by</span>
+      <span class="comp-name">{{ replacedBy.name }}</span>
+    </div>
+  {% elif bundledWith %}
+    <div class="component bundled">
+      <span class="comp-bundled-label">Bundled with</span>
+      <span class="comp-name">{{ bundledWith.name }}</span>
+    </div>
+  {% elif comp %}
+    {% if comp.bundled %}
+      <div class="component bundled">
+        <span class="comp-name">{{ comp.name }}</span>
+        <span class="comp-price">{{ comp.price }}</span>
+      </div>
+    {% else %}
+      <div class="component {% if comp.optional %}optional{% endif %}" tabindex="0">
+        {% if comp.optional %}<span class="comp-optional-label">Optional</span>{% endif %}
+        <span class="comp-name">{{ comp.name }}</span>
+        <span class="comp-price">{{ comp.price }}</span>
+        {% if comp.notes %}
+        <div class="comp-details">
+          <p>{{ comp.notes }}</p>
+        </div>
+        {% endif %}
+      </div>
+    {% endif %}
+  {% else %}
+    <div class="component na">
+      <span class="comp-na">&mdash;</span>
+    </div>
+  {% endif %}
+{% endmacro %}
+
+<div class="tier-table-wrap">
+  <table class="tier-table">
+    <thead>
+      <tr>
+        <th class="tier-header-cell">Tier</th>
+        {% for cat in categories %}
+        <th class="cat-header" data-cat="{{ cat.id }}" title="{{ cat.description }}">
+          {{ cat.label }}
+        </th>
+        {% endfor %}
+      </tr>
+    </thead>
+    <tbody>
+      {% for tier in tiers %}
+        {% if tier.flavors %}
+          {# --- Flavored tier: render one row per flavor --- #}
+          {% for flavor in tier.flavors %}
+          <tr class="tier-row {% if not loop.first %}flavor-hidden{% endif %}"
+              data-level="{{ tier.level }}"
+              data-use-cases="{{ tier.use_cases | join(',') }}"
+              data-flavor-group="tier-{{ tier.level }}"
+              data-flavor-index="{{ loop.index0 }}"
+              style="--tier-color: {{ tier.color }}">
+            <td class="tier-info-cell">
+              {% if loop.first %}
+              <div class="tier-name">{{ tier.name }}</div>
+              <div class="tier-price">{{ tier.price_range }}</div>
+              <div class="tier-desc">{{ tier.description }}</div>
+              <div class="flavor-select-wrap">
+                <select class="flavor-select" data-flavor-group="tier-{{ tier.level }}">
+                  {% for f in tier.flavors %}
+                  <option value="{{ loop.index0 }}">{{ f.name }}</option>
+                  {% endfor %}
+                </select>
+              </div>
+              <div class="tier-tags">
+                {% for uc in tier.use_cases %}
+                <span class="use-case-tag" data-uc="{{ uc }}">{{ uc }}</span>
+                {% endfor %}
+              </div>
+              {% else %}
+              {# Hidden flavor rows still need tier info for context but it's visually hidden #}
+              <div class="tier-name">{{ tier.name }}</div>
+              <div class="tier-price">{{ tier.price_range }}</div>
+              <div class="tier-desc">{{ tier.description }}</div>
+              <div class="flavor-select-wrap">
+                <select class="flavor-select" data-flavor-group="tier-{{ tier.level }}">
+                  {% for f in tier.flavors %}
+                  <option value="{{ loop.index0 }}" {% if loop.index0 == flavor._index %}selected{% endif %}>{{ f.name }}</option>
+                  {% endfor %}
+                </select>
+              </div>
+              <div class="tier-tags">
+                {% for uc in tier.use_cases %}
+                <span class="use-case-tag" data-uc="{{ uc }}">{{ uc }}</span>
+                {% endfor %}
+              </div>
+              {% endif %}
+            </td>
+            {% for cat in categories %}
+            <td class="component-cell" data-cat="{{ cat.id }}">
+              {{ componentCell(flavor.components, cat, tier.color) }}
+            </td>
+            {% endfor %}
+          </tr>
+          {% endfor %}
+        {% else %}
+          {# --- Standard tier: single row --- #}
+          <tr class="tier-row" data-level="{{ tier.level }}" data-use-cases="{{ tier.use_cases | join(',') }}" style="--tier-color: {{ tier.color }}">
+            <td class="tier-info-cell">
+              <div class="tier-name">{{ tier.name }}</div>
+              <div class="tier-price">{{ tier.price_range }}</div>
+              <div class="tier-desc">{{ tier.description }}</div>
+              <div class="tier-tags">
+                {% for uc in tier.use_cases %}
+                <span class="use-case-tag" data-uc="{{ uc }}">{{ uc }}</span>
+                {% endfor %}
+              </div>
+            </td>
+            {% for cat in categories %}
+            <td class="component-cell" data-cat="{{ cat.id }}">
+              {{ componentCell(tier.components, cat, tier.color) }}
+            </td>
+            {% endfor %}
+          </tr>
+        {% endif %}
+      {% endfor %}
+    </tbody>
+  </table>
+</div>

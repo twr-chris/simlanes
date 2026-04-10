@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ title or "Simlanes" }}</title>
+  <meta name="description" content="A community-driven sim racing rig building guide">
+  <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+  {% include "header.njk" %}
+  <main>
+    {{ content | safe }}
+  </main>
+  <footer>
+    <p>
+      <a href="https://github.com/twr-chris/simlanes">Contribute on GitHub</a>
+      &middot; Data-driven &mdash; submit a PR to improve recommendations
+    </p>
+  </footer>
+  <script src="/assets/js/main.js"></script>
+</body>
+</html>

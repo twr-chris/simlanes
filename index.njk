@@ -1,0 +1,53 @@
+---
+layout: default.njk
+title: Simlanes — Sim Rig Building Guide
+---
+
+<div class="intro">
+  <p>
+    Choose your tier, build your rig. Each level adds new component categories as your setup grows
+    from a desk clamp to a full motion cockpit. Prices are approximate MSRP in USD.
+  </p>
+</div>
+
+<div class="filters">
+  <span class="filter-label">Filter by use case:</span>
+  <button class="filter-btn active" data-filter="all">All</button>
+  {% for uc in use_cases %}
+  <button class="filter-btn" data-filter="{{ uc.id }}">{{ uc.label }}</button>
+  {% endfor %}
+</div>
+
+{% include "tier-table.njk" %}
+
+<div class="legend">
+  <h3>How to read this table</h3>
+  <ul>
+    <li>Tiers go from entry-level to extreme. Higher tiers introduce new component categories.</li>
+    <li>A dash (<strong>&mdash;</strong>) means that category doesn't apply at this tier.</li>
+    <li><em>Bundled</em> means the component is included with another purchase at that tier.</li>
+    <li>Click any product name to expand details and links.</li>
+  </ul>
+</div>
+
+<section class="guides-section" id="guides">
+  <h2 class="guides-heading">Guides</h2>
+  <p class="guides-intro">Common questions answered. Know something we don't? <a href="https://github.com/twr-chris/simlanes">Submit a guide via PR.</a></p>
+  <div class="guides-grid">
+    {% for guide in collections.guides %}
+    <a href="{{ guide.url }}" class="guide-card">
+      <h3 class="guide-card-title">{{ guide.data.title }}</h3>
+      {% if guide.data.description %}
+      <p class="guide-card-desc">{{ guide.data.description }}</p>
+      {% endif %}
+      {% if guide.data.tags %}
+      <div class="guide-card-tags">
+        {% for tag in guide.data.tags %}
+        <span class="guide-tag">{{ tag }}</span>
+        {% endfor %}
+      </div>
+      {% endif %}
+    </a>
+    {% endfor %}
+  </div>
+</section>

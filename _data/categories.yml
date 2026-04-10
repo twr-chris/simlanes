@@ -1,0 +1,59 @@
+- id: wheelbase
+  label: "Wheel Base"
+  description: "The force feedback motor unit that drives the steering wheel"
+  appears_at_tier: 1
+
+- id: wheel_rim
+  label: "Steering Wheel"
+  description: "The steering wheel rim attached to the base"
+  appears_at_tier: 1
+
+- id: pedals
+  label: "Pedals"
+  description: "Throttle, brake, and optionally clutch pedals"
+  appears_at_tier: 1
+
+- id: mount
+  label: "Mount"
+  description: "How the wheelbase is attached — desk clamp, stand, or integrated into cockpit"
+  appears_at_tier: 1
+
+- id: shifter
+  label: "Shifter"
+  description: "Sequential or H-pattern gear shifter"
+  appears_at_tier: 2
+
+- id: cockpit
+  label: "Cockpit / Chassis"
+  description: "A rigid frame that holds all components in a fixed driving position"
+  appears_at_tier: 3
+
+- id: seat
+  label: "Seat"
+  description: "Dedicated racing or bucket seat"
+  appears_at_tier: 3
+
+- id: handbrake
+  label: "Handbrake"
+  description: "Analog handbrake for rally and drifting"
+  appears_at_tier: 4
+
+- id: button_box
+  label: "Button Box"
+  description: "External button panel for car controls, pit menus, etc."
+  appears_at_tier: 5
+
+- id: motion
+  label: "Motion Platform"
+  description: "Actuator system that tilts/moves the rig to simulate G-forces"
+  appears_at_tier: 6
+
+- id: wind_sim
+  label: "Wind / Tactile"
+  description: "Fans, bass shakers, or tactile transducers for immersion"
+  appears_at_tier: 5
+
+- id: pedal_haptics
+  label: "Pedal Haptics"
+  description: "Braking feedback for your feet"
+  appears_at_tier: 4
