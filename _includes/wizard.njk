@@ -1,0 +1,49 @@
+<section class="wizard" id="wizard">
+  <h2 class="wizard-title">Build Wizard</h2>
+  <p class="wizard-subtitle">Pick what you want to race and how much you want to spend.</p>
+
+  <div class="wizard-step wizard-disciplines" id="wizard-disciplines">
+    {% for d in disciplines %}
+    <button class="discipline-card" data-discipline="{{ d.id }}">
+      <span class="discipline-label">{{ d.label }}</span>
+      <span class="discipline-desc">{{ d.description }}</span>
+    </button>
+    {% endfor %}
+  </div>
+
+  <div class="wizard-step wizard-budget visible" id="wizard-budget">
+    <h3 class="wizard-step-label">Select your budget</h3>
+    <div class="wizard-budget-btns">
+      {% for tier in tiers %}
+      <button class="budget-btn" data-tier-level="{{ tier.level }}">
+        <span class="budget-range">{{ tier.price_range }}</span>
+        <span class="budget-name">{{ tier.name }}</span>
+      </button>
+      {% endfor %}
+    </div>
+  </div>
+
+  <div class="wizard-result" id="wizard-result"></div>
+</section>
+
+<script type="application/json" id="wizard-data">
+{
+  "disciplines": {{ disciplines | dump | safe }},
+  "capabilities": {{ capabilities | dump | safe }},
+  "tiers": [
+    {% for tier in tiers %}
+    {
+      "level": {{ tier.level }},
+      "name": {{ tier.name | dump | safe }},
+      "priceRange": {{ tier.price_range | dump | safe }},
+      "color": {{ tier.color | dump | safe }},
+      {% if tier.flavors %}
+      "flavors": {{ tier.flavors | dump | safe }}
+      {% else %}
+      "components": {{ tier.components | dump | safe }}
+      {% endif %}
+    }{% if not loop.last %},{% endif %}
+    {% endfor %}
+  ]
+}
+</script>

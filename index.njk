@@ -6,17 +6,13 @@ title: Simlanes — Sim Rig Building Guide
 <div class="intro">
   <p>
     Choose your tier, build your rig. Each level adds new component categories as your setup grows
-    from a desk clamp to a full motion cockpit. Prices are approximate MSRP in USD.
+    from a desk clamp to a full motion cockpit.
   </p>
+  <p class="intro-disclaimer">Prices are estimates based on MSRP in USD and may not reflect current retail pricing. Always check the retailer before purchasing.</p>
 </div>
 
-<div class="filters">
-  <span class="filter-label">Filter by use case:</span>
-  <button class="filter-btn active" data-filter="all">All</button>
-  {% for uc in use_cases %}
-  <button class="filter-btn" data-filter="{{ uc.id }}">{{ uc.label }}</button>
-  {% endfor %}
-</div>
+{% include "wizard.njk" %}
+
 
 {% include "tier-table.njk" %}
 

@@ -1,0 +1,57 @@
+- id: gt_road
+  label: "GT & Road Racing"
+  description: "Circuit racing — iRacing, ACC, LMU"
+  requires:
+    force_feedback: required
+    paddle_shifters: required
+    load_cell_brake: recommended
+    button_plate: optional
+
+- id: open_wheel
+  label: "Open Wheel / Formula"
+  description: "F1, IndyCar — precision braking, high-speed aero"
+  requires:
+    force_feedback: required
+    high_torque_ffb: recommended
+    load_cell_brake: recommended
+    paddle_shifters: required
+    button_plate: recommended
+
+- id: rally
+  label: "Rally"
+  description: "Gravel, tarmac, snow — ACR, WRC, Dirt Rally"
+  requires:
+    force_feedback: required
+    sequential_shifter: required
+    handbrake: required
+    high_rotation: recommended
+    clutch_pedal: recommended
+    load_cell_brake: recommended
+    tactile_feedback: optional
+
+- id: drift
+  label: "Drift"
+  description: "Sustained oversteer — Assetto Corsa drift servers"
+  requires:
+    force_feedback: required
+    high_rotation: required
+    clutch_pedal: required
+    handbrake: required
+    h_pattern_shifter: recommended
+    sequential_shifter: recommended
+
+- id: oval
+  label: "Oval / NASCAR"
+  description: "Stock cars, oval tracks — iRacing oval"
+  requires:
+    force_feedback: required
+    paddle_shifters: required
+
+- id: truck
+  label: "Truck & Off-Road"
+  description: "ETS2, ATS, off-road sims"
+  requires:
+    force_feedback: required
+    h_pattern_shifter: required
+    clutch_pedal: required
+

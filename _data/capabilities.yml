@@ -1,0 +1,71 @@
+# Steering
+- id: force_feedback
+  label: "Force Feedback"
+  description: "Steering resistance that communicates road feel and tire grip"
+  group: steering
+
+- id: high_torque_ffb
+  label: "High Torque FFB (10+ Nm)"
+  description: "Direct-drive level force feedback for nuanced detail"
+  group: steering
+
+- id: high_rotation
+  label: "High Steering Rotation (900+°)"
+  description: "Full lock-to-lock rotation for rally and drift"
+  group: steering
+
+# Pedals
+- id: load_cell_brake
+  label: "Load Cell Brake"
+  description: "Pressure-based braking for consistent, precise stops"
+  group: pedals
+
+- id: clutch_pedal
+  label: "Clutch Pedal"
+  description: "Third pedal for manual clutch operation"
+  group: pedals
+
+# Shifting
+- id: sequential_shifter
+  label: "Sequential Shifter"
+  description: "Push-pull lever for sequential gearbox cars"
+  group: shifting
+
+- id: h_pattern_shifter
+  label: "H-Pattern Shifter"
+  description: "Gated shifter for road cars and classic racing"
+  group: shifting
+
+- id: paddle_shifters
+  label: "Paddle Shifters"
+  description: "Wheel-mounted paddles for formula and GT cars"
+  group: shifting
+
+# Auxiliary
+- id: handbrake
+  label: "Analog Handbrake"
+  description: "Progressive handbrake for rally and drift"
+  group: auxiliary
+
+- id: button_plate
+  label: "Button Plate / Box"
+  description: "Extra controls for TC, ABS, pit strategy"
+  group: auxiliary
+
+# Immersion
+- id: tactile_feedback
+  label: "Tactile / Bass Shaker"
+  description: "Physical vibration conveying curbs, engine, impacts"
+  group: immersion
+
+- id: motion_platform
+  label: "Motion Platform"
+  description: "Actuators simulating G-forces and chassis movement"
+  group: immersion
+
+
+# Structure
+- id: rigid_mount
+  label: "Rigid Mounting"
+  description: "A cockpit or stand that eliminates flex under load"
+  group: structure

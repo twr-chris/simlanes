@@ -34,29 +34,4 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  // --- Use-case filter buttons ---
-  var filterBtns = document.querySelectorAll('.filter-btn');
-  var tierRows = document.querySelectorAll('.tier-row');
-
-  filterBtns.forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      filterBtns.forEach(function (b) { b.classList.remove('active'); });
-      btn.classList.add('active');
-
-      var filter = btn.getAttribute('data-filter');
-
-      tierRows.forEach(function (row) {
-        if (filter === 'all') {
-          row.classList.remove('hidden');
-        } else {
-          var useCases = row.getAttribute('data-use-cases') || '';
-          if (useCases.split(',').indexOf(filter) !== -1) {
-            row.classList.remove('hidden');
-          } else {
-            row.classList.add('hidden');
-          }
-        }
-      });
-    });
-  });
 });

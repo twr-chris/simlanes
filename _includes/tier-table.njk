@@ -75,7 +75,7 @@
           {% for flavor in tier.flavors %}
           <tr class="tier-row {% if not loop.first %}flavor-hidden{% endif %}"
               data-level="{{ tier.level }}"
-              data-use-cases="{{ tier.use_cases | join(',') }}"
+
               data-flavor-group="tier-{{ tier.level }}"
               data-flavor-index="{{ loop.index0 }}"
               style="--tier-color: {{ tier.color }}">
@@ -85,16 +85,12 @@
               <div class="tier-price">{{ tier.price_range }}</div>
               <div class="tier-desc">{{ tier.description }}</div>
               <div class="flavor-select-wrap">
+                <label class="flavor-select-label">Select a flavor</label>
                 <select class="flavor-select" data-flavor-group="tier-{{ tier.level }}">
                   {% for f in tier.flavors %}
                   <option value="{{ loop.index0 }}">{{ f.name }}</option>
                   {% endfor %}
                 </select>
-              </div>
-              <div class="tier-tags">
-                {% for uc in tier.use_cases %}
-                <span class="use-case-tag" data-uc="{{ uc }}">{{ uc }}</span>
-                {% endfor %}
               </div>
               {% else %}
               {# Hidden flavor rows still need tier info for context but it's visually hidden #}
@@ -102,16 +98,12 @@
               <div class="tier-price">{{ tier.price_range }}</div>
               <div class="tier-desc">{{ tier.description }}</div>
               <div class="flavor-select-wrap">
+                <label class="flavor-select-label">Select a flavor</label>
                 <select class="flavor-select" data-flavor-group="tier-{{ tier.level }}">
                   {% for f in tier.flavors %}
                   <option value="{{ loop.index0 }}" {% if loop.index0 == flavor._index %}selected{% endif %}>{{ f.name }}</option>
                   {% endfor %}
                 </select>
-              </div>
-              <div class="tier-tags">
-                {% for uc in tier.use_cases %}
-                <span class="use-case-tag" data-uc="{{ uc }}">{{ uc }}</span>
-                {% endfor %}
               </div>
               {% endif %}
             </td>
@@ -124,16 +116,11 @@
           {% endfor %}
         {% else %}
           {# --- Standard tier: single row --- #}
-          <tr class="tier-row" data-level="{{ tier.level }}" data-use-cases="{{ tier.use_cases | join(',') }}" style="--tier-color: {{ tier.color }}">
+          <tr class="tier-row" data-level="{{ tier.level }}" style="--tier-color: {{ tier.color }}">
             <td class="tier-info-cell">
               <div class="tier-name">{{ tier.name }}</div>
               <div class="tier-price">{{ tier.price_range }}</div>
               <div class="tier-desc">{{ tier.description }}</div>
-              <div class="tier-tags">
-                {% for uc in tier.use_cases %}
-                <span class="use-case-tag" data-uc="{{ uc }}">{{ uc }}</span>
-                {% endfor %}
-              </div>
             </td>
             {% for cat in categories %}
             <td class="component-cell" data-cat="{{ cat.id }}">

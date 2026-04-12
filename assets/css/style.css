@@ -78,8 +78,305 @@ main {
   max-width: 720px;
   margin: 0 auto 1.5rem;
   text-align: center;
+}
+
+.intro-disclaimer {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-style: italic;
+  margin-top: 0.5rem;
   color: var(--text-muted);
   font-size: 1rem;
+}
+
+/* ===== Wizard ===== */
+.wizard {
+  max-width: 900px;
+  margin: 0 auto 2rem;
+  padding: 1.5rem;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.wizard-title {
+  font-size: 1.4rem;
+  font-weight: 800;
+  margin-bottom: 0.25rem;
+}
+
+.wizard-subtitle {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-bottom: 1.25rem;
+}
+
+.wizard-step-label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  margin-bottom: 0.75rem;
+}
+
+/* Discipline cards */
+.wizard-disciplines {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 0.6rem;
+  margin-bottom: 1rem;
+}
+
+.discipline-card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0.75rem;
+  cursor: pointer;
+  text-align: left;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.discipline-card:hover {
+  border-color: var(--accent);
+}
+
+.discipline-card.active {
+  border-color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 10%, var(--bg));
+}
+
+.discipline-label {
+  display: block;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 0.2rem;
+}
+
+.discipline-desc {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  line-height: 1.3;
+}
+
+/* Budget buttons */
+.wizard-budget {
+  display: none;
+  margin-bottom: 1rem;
+}
+
+.wizard-budget.visible {
+  display: block;
+}
+
+.wizard-budget-btns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.budget-btn {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0.5rem 0.75rem;
+  cursor: pointer;
+  text-align: center;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.budget-btn:hover {
+  border-color: var(--accent);
+}
+
+.budget-btn.active {
+  border-color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 10%, var(--bg));
+}
+
+.budget-range {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.budget-name {
+  display: block;
+  font-size: 0.7rem;
+  color: var(--text-muted);
+}
+
+/* Wizard result */
+.wizard-result {
+  display: none;
+}
+
+.wizard-result.visible {
+  display: block;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+}
+
+.wizard-result-header {
+  margin-bottom: 1rem;
+}
+
+.wizard-result-title {
+  font-size: 1.1rem;
+  font-weight: 800;
+  margin-bottom: 0.2rem;
+}
+
+.wizard-result-price {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--accent);
+  font-family: var(--font-mono);
+  margin-right: 0.75rem;
+}
+
+.wizard-result-flavor {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* Coverage report */
+.wizard-coverage {
+  margin-bottom: 1.25rem;
+}
+
+.wizard-coverage-title,
+.wizard-components-title,
+.wizard-upgrades-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+}
+
+.wizard-cap {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.25rem 0;
+  font-size: 0.85rem;
+}
+
+.wizard-cap-icon {
+  width: 1.2rem;
+  text-align: center;
+  font-weight: 700;
+}
+
+.wizard-cap.satisfied .wizard-cap-icon { color: #3fb950; }
+.wizard-cap.gap.required .wizard-cap-icon { color: #f85149; }
+.wizard-cap.gap.recommended .wizard-cap-icon { color: #d29922; }
+.wizard-cap.gap.optional .wizard-cap-icon { color: var(--text-muted); }
+
+.wizard-cap-label {
+  flex: 1;
+  color: var(--text);
+}
+
+.wizard-cap-level {
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 0.1rem 0.4rem;
+  border-radius: 3px;
+}
+
+/* Satisfied capabilities — badge is green regardless of level */
+.wizard-cap.satisfied .wizard-cap-level {
+  background: color-mix(in srgb, #3fb950 15%, transparent);
+  color: #3fb950;
+}
+
+/* Unsatisfied capabilities — badge color reflects severity */
+.wizard-cap.gap.required .wizard-cap-level {
+  background: color-mix(in srgb, #f85149 15%, transparent);
+  color: #f85149;
+}
+
+.wizard-cap.gap.recommended .wizard-cap-level {
+  background: color-mix(in srgb, #d29922 15%, transparent);
+  color: #d29922;
+}
+
+.wizard-cap.gap.optional .wizard-cap-level {
+  background: color-mix(in srgb, var(--text-muted) 15%, transparent);
+  color: var(--text-muted);
+}
+
+/* Component list */
+.wizard-components {
+  margin-bottom: 1.25rem;
+}
+
+.wizard-comp {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.3rem 0;
+  font-size: 0.85rem;
+  border-bottom: 1px solid color-mix(in srgb, var(--border) 50%, transparent);
+}
+
+.wizard-comp-cat {
+  width: 100px;
+  flex-shrink: 0;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-muted);
+}
+
+.wizard-comp-name {
+  flex: 1;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.wizard-comp-price {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 0.8rem;
+  color: var(--accent);
+}
+
+/* Upgrade hints */
+.wizard-upgrades {
+  padding: 0.75rem;
+  background: color-mix(in srgb, #d29922 8%, var(--bg));
+  border: 1px solid color-mix(in srgb, #d29922 25%, var(--border));
+  border-radius: 6px;
+}
+
+.wizard-upgrade {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  padding: 0.2rem 0;
+}
+
+.wizard-upgrade-cap {
+  color: #d29922;
+  font-weight: 600;
+}
+
+/* Highlighted tier row (from wizard) */
+.tier-row.wizard-highlighted {
+  outline: 2px solid var(--accent);
+  outline-offset: -2px;
 }
 
 /* ===== Filters ===== */
@@ -189,6 +486,16 @@ main {
 .flavor-select-wrap {
   margin-top: 0.4rem;
   margin-bottom: 0.3rem;
+}
+
+.flavor-select-label {
+  display: block;
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-muted);
+  margin-bottom: 0.2rem;
 }
 
 .flavor-select {
